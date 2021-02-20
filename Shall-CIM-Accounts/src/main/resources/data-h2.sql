@@ -1,10 +1,14 @@
 /* Filling item table */
 INSERT INTO item (item_id, item_name, item_type, item_price)
 VALUES (1, 'Tomatoe', 1, 5);
+INSERT INTO item (item_id, item_name, item_type, item_price)
 VALUES (2, 'Cucumber', 1, 4);
-VALUES (3, 'Pen', 2, 5);
-VALUES (4, 'Shoes', 3, 5);
-VALUES (5, 'Hand washer', 4, 5);
+INSERT INTO item (item_id, item_name, item_type, item_price)
+VALUES (3, 'Pen', 2, 6);
+INSERT INTO item (item_id, item_name, item_type, item_price)
+VALUES (4, 'Shoes', 2, 8);
+INSERT INTO item (item_id, item_name, item_type, item_price)
+VALUES (5, 'Hand washer', 2, 7);
 
 /* Filling customer type table */
 INSERT INTO customer_type (customer_type_id, percentage_discount)
@@ -24,4 +28,4 @@ VALUES (2, 'Said', 'Shall', 'said@gmail.com', 'Dubai',2, '2017-03-01');
 INSERT INTO customer (customer_id, first_name, last_name, email, city, customer_type_id, member_since) 
 VALUES (3, 'Mohamed', 'Shall', 'mohamed@gmail.com', 'Dubai',1,'2018-02-01');
 INSERT INTO customer (customer_id, first_name, last_name, email, city, customer_type_id, member_since) 
-VALUES (4, 'Mohamed', 'Shall', 'mohamed@gmail.com', 'Dubai',1,'2018-02-01');
+VALUES (4, 'Mohamed', 'Shall', 'mohamed@gmail.com', 'Dubai',1,'2020-02-01');

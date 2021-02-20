@@ -1,5 +1,6 @@
 package com.shall.customeraccount.service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,7 @@ import com.shall.customeraccount.model.Item;
 import com.shall.customeraccount.repository.CustomerRepository;
 import com.shall.customeraccount.repository.CustomerTypeRepository;
 import com.shall.customeraccount.repository.ItemRepository;
+import com.shall.util.Utils;
 
 @Service
 public class OrderService {
@@ -26,6 +28,8 @@ public class OrderService {
 	private ItemRepository itemRepository;
 	@Autowired
 	private CustomerTypeRepository customerTypeRepository;
+
+	private Utils utils = new Utils();
 
 	public ResultDTO processOrder(OrderDTO order) {
 		System.out.println("OrderService.processOrder - > Start");
@@ -60,7 +64,19 @@ public class OrderService {
 		Customer customer = customerRepository.findOne(customerId);
 		Long customerTypeId = customer.getCustomerTypeId();
 		CustomerType customerType = customerTypeRepository.findOne(customerTypeId);
-		return customerType.getPercentageDiscount();
+		Date memberSince = customer.getMemberSince();
+		long differenceInYears = utils.getTimeDiffInYears(memberSince);
+		System.out.println("OrderService.getDiscountPercentage -> Difference in years: "+ differenceInYears);
+		if(customerTypeId == 1) {
+			if(differenceInYears > 2) {
+				return customerType.getPercentageDiscount();
+				}else {
+					return (long) 0;
+				}
+		}else {
+			return customerType.getPercentageDiscount();
+		}
+		
 	}
 
 	public List<Item> getItemsBasedOnType(boolean isGrocery) {

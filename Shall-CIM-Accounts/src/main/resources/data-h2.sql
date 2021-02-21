@@ -1,14 +1,14 @@
 /* Filling item table */
 INSERT INTO item (item_id, item_name, item_type, item_price)
-VALUES (1, 'Tomatoe', 1, 5);
+VALUES (1, 'Tomatoe', 1, 50);
 INSERT INTO item (item_id, item_name, item_type, item_price)
-VALUES (2, 'Cucumber', 1, 4);
+VALUES (2, 'Cucumber', 1, 60);
 INSERT INTO item (item_id, item_name, item_type, item_price)
-VALUES (3, 'Pen', 2, 6);
+VALUES (3, 'Pen', 2, 100);
 INSERT INTO item (item_id, item_name, item_type, item_price)
-VALUES (4, 'Shoes', 2, 8);
+VALUES (4, 'Shoes', 2, 50);
 INSERT INTO item (item_id, item_name, item_type, item_price)
-VALUES (5, 'Hand washer', 2, 7);
+VALUES (5, 'Hand washer', 2, 100);
 
 /* Filling customer type table */
 INSERT INTO customer_type (customer_type_id, percentage_discount)

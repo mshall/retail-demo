@@ -26,7 +26,8 @@ public class OrderController {
 	@CrossOrigin
 	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
 	public ResponseEntity<ResponseVO<ResultDTO>> processOrder(@RequestBody OrderDTO order) {
-		return ResponseEntity.ok(new ResponseVO<>(service.processOrder(order)));
+		ResultDTO result = service.processOrder(order);
+		return ResponseEntity.ok(new ResponseVO<>(result));
 	}
 
 

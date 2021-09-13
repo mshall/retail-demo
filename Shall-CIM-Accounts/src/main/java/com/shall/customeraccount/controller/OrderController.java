@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shall.customeraccount.dto.OrderDTO;
 import com.shall.customeraccount.dto.ResultDTO;
+import com.shall.customeraccount.model.Weather;
 import com.shall.customeraccount.network.response.ResponseVO;
 import com.shall.customeraccount.service.OrderService;
 
@@ -21,6 +22,7 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 
+	
 
 
 	@CrossOrigin
@@ -30,5 +32,7 @@ public class OrderController {
 		return ResponseEntity.ok(new ResponseVO<>(result));
 	}
 
+	
+	
 
 }

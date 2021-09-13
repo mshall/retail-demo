@@ -1,3 +1,15 @@
+
+CREATE TABLE WEATHER
+(
+     weather_id IDENTITY NOT NULL,
+     weather_date DATE NOT NULL,
+     lat  FLOAT NOT NULL,
+     lon   FLOAT NOT NULL,
+     city       VARCHAR2(150) NOT NULL,
+     state        VARCHAR2(150) NOT NULL,
+     temperatures    VARCHAR2(240) NOT NULL
+);
+
 CREATE TABLE customer
   (
      customer_id NUMBER(10) NOT NULL,
